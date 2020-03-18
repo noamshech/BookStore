@@ -1,0 +1,75 @@
+﻿@model BookPlace.Models.Store
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h3>Edit Stores</h3>
+        <hr />
+
+
+        <div>
+            @Html.HiddenFor(m => m.StoreId)
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(m => m.Name, new { htmlAttribute = new { @class = "form-control" } })<!--For the text we want to edit-->
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.CoordinateAlt, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(m => m.CoordinateAlt, new { htmlAttribute = new { @class = "form-control" } })<!--For the text we want to edit-->
+                    @Html.ValidationMessageFor(m => m.CoordinateAlt, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.CoordinateLng, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(m => m.CoordinateLng, new { htmlAttribute = new { @class = "form-control" } })<!--For the text we want to edit-->
+                    @Html.ValidationMessageFor(m => m.CoordinateLng, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(m => m.Address, new { htmlAttribute = new { @class = "form-control" } })<!--For the text we want to edit-->
+                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(m => m.City, new { htmlAttribute = new { @class = "form-control" } })<!--For the text we want to edit-->
+                    @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <br />
+    <div>
+        @Html.Partial("_BackToListButtonPartial")
+        <input type="submit" value="Save" class="btn btn-sm btn-success" />
+
+    </div>
+}

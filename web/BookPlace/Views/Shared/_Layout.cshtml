@@ -1,0 +1,60 @@
+﻿@using BookPlace.Utility
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Place</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <li style="text-shadow: 0 0 2px white;">  <b>@Html.ActionLink("Book Place", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</b> </li>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <b>
+                    <ul class="nav navbar-nav">
+
+                        <li style="text-shadow: 0 0 2px #000000;">  @Html.ActionLink("About", "About", "Home")</li>
+                        <li style="text-shadow: 0 0 2px #000000;"> <a href="/Stores">Stores</a></li>
+
+
+                        @if (User.IsInRole(SD.AdminUserRole))
+                        {
+                            @Html.Partial("_AdminMenuPartial")
+
+                        }
+
+                    </ul>
+                </b>
+
+                
+                <h5 style="text-shadow: 0 0 2px #000000;"> <b> @Html.Partial("_LoginPartial")</b></h5>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="container body-content">
+        @RenderBody()
+
+
+    </div>
+
+    <footer class="footer2" style="background-color:transparent; color:black; border:double thick; border-color:white; text-shadow: 1px 0 white, 0 1px white, 1px 0 white, 1px white;">
+        <b> The</b> Place For Books
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bookPlaceJs")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

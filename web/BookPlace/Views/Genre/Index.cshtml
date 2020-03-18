@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BookPlace.Models.Genre>
+@using BookPlace.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Genre</h2>
+
+
+
+@Html.Partial("_CreateButtonPartial")
+
+<form method="get" action="Genre">
+    Search by Genre Name: <input type="text" name="searchText" />
+    <input type="submit" value="Filter" />
+
+</form>
+
+<table class="table table-condesed table-hover">
+    <tr>
+        <th>
+
+            @Html.DisplayNameFor(m => m.Name)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => item.Name)
+            </td>
+            <td>
+                @Html.Partial("_TableButtonPartial",
+    new IndividualButtonPartial
+    {
+        GenreId = item.Id
+    })
+            </td>
+        </tr>
+    }
+</table>
+

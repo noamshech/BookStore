@@ -1,0 +1,53 @@
+﻿
+@Scripts.Render("~/bundles/script")
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<br />
+<br />
+<br />
+
+<div class="row ">
+    <h2 style="text-align:center">Google Maps</h2><br />
+
+    <div class="thumbnail2">
+
+        @Html.Partial("~/Views/Shared/GoogleMaps.cshtml")
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="col-xs-6 ">
+    <h2 style="text-align:center">Weather</h2><br />
+
+    <div class="thumbnail">
+
+        @Html.Partial("~/Views/Shared/Weather.cshtml")
+
+    </div>
+
+</div>
+
+
+<div class="col-xs-6">
+    <h2 style="text-align:center">Facebook Posts - New In !</h2><br />
+    <div class="thumbnail">
+        <div id="facebook_posts"></div>
+    </div>
+</div>
+
+
+
+
+
+

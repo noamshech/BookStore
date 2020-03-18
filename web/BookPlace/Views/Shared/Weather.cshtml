@@ -1,0 +1,76 @@
+﻿<!-- Card -->
+
+
+    <!-- Card content -->
+    <div class="card-body pb-3">
+        <!-- Title -->
+        <div class="dropdown">
+            <a href="#"><h4 class=" text-center font-weight-bold dropdown-toggle" id="toggle_weather"><s href="#" style="text-decoration: underline;" id="weather_title">Holon</s> <div style="float: right;" </div></h4></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="weather">
+                <input class="form-control" id="myInput" type="text" placeholder="Choose a city.." style="padding: 20px;margin-top: -7px;border: 0;border-radius: 0;background: #f1f1f1;">
+                <a class="dropdown-item" href="#">London</a>
+                <a class="dropdown-item" href="#">Paris</a>
+                <a class="dropdown-item" href="#">New York</a>
+                <a class="dropdown-item" href="#">Beersheba</a>
+                <a class="dropdown-item" href="#">Barcelona</a>
+                <a class="dropdown-item" href="#">Moscow</a>
+                <a class="dropdown-item" href="#">Chicago</a>
+                <a class="dropdown-item" href="#">Singapore</a>
+                <a class="dropdown-item" href="#">Dubai</a>
+                <a class="dropdown-item" href="#">San Francisco</a>
+                <a class="dropdown-item" href="#">Madrid</a>
+                <a class="dropdown-item" href="#">Amsterdam</a>
+                <a class="dropdown-item" href="#">Los Angeles</a>
+                <a class="dropdown-item" href="#">Rome</a>
+                <a class="dropdown-item" href="#">Boston</a>
+                <a class="dropdown-item" href="#">San Jose</a>
+                <a class="dropdown-item" href="#">Toronto</a>
+                <a class="dropdown-item" href="#">Washington DC</a>
+                <a class="dropdown-item" href="#">Zurich</a>
+                <a class="dropdown-item" href="#">Hong Kong</a>
+                <a class="dropdown-item" href="#">Beijing</a>
+                <a class="dropdown-item" href="#">Berlin</a>
+                <a class="dropdown-item" href="#">Ashdod</a>
+                <a class="dropdown-item" href="#">Las Vegas</a>
+                <a class="dropdown-item" href="#">Yavne</a>
+                <a class="dropdown-item" href="#">Miami</a>
+                <a class="dropdown-item" href="#">San Diego</a>
+                <a class="dropdown-item" href="#">Kiryat Shmona</a>
+                <a class="dropdown-item" href="#">Prague</a>
+                <a class="dropdown-item" href="#">Mitzpe Ramon</a>
+                <a class="dropdown-item" href="#">Tel Aviv</a>
+                <a class="dropdown-item" href="#">Jerusalem</a>
+                <a class="dropdown-item" href="#">Rehovot</a>
+                <a class="dropdown-item" href="#">Rishon Lezion</a>
+                <a class="dropdown-item" href="#">Haifa</a>
+                <a class="dropdown-item" href="#">Eilat</a>
+                <a class="dropdown-item" href="#">Beer-Sheva</a>
+            </div>
+        </div>
+
+        <div id="show_weather" style="display: none;">
+            <!-- Text -->
+            <p class="card-text text-center"><span id="weather_date" title="The date that the weather was taken">Mon, 12:30 PM</span>, <span id="weather_desc">Mostly Sunny</span></p>
+            <div class="d-flex justify-content-between">
+                <h1 class="display-1 degree text-center"><span id="deg1">23</span>&deg;</h1>
+            </div>
+            <div class="d-flex justify-content-between mb-4 text-center">
+                <p>💧 <span id="weather_humidity">3</span>% Humidity</p>
+                <p>💨 <span id="weather_winds"></span> hm/h Winds</p>
+            </div>
+            <div class="progress md-progress">
+                @{
+                    var date = DateTime.Now.Hour;
+                    var percent = (double)date / (double)24 * (double)100;
+                }
+                <div class="progress-bar black" role="progressbar" style="width: @percent%" aria-valuenow="@((int)(percent))" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <ul class="list-unstyled  justify-content-between mb-4">
+                <h4 class="text-left">12AM</h4>
+                <h4 class="text-center">12PM</h4>
+                <h4 class="text-right">24PM</h4>
+            </ul>
+        </div>
+    </div>
+
+<!-- Card -->

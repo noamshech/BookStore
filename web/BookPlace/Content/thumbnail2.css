@@ -1,0 +1,21 @@
+﻿.thumbnail .thumbnail-img-container {
+    overflow: hidden;
+}
+
+.thumbnail .thumbnail-img {
+    width: 100%;
+    height: auto;
+}
+
+.thumbnail a, a:focus, a:hover, a:active {
+    outline: 0px none !important;
+    text-decoration: none;
+}
+
+.thumbnail {
+}
+
+    .thumbnail:hover {
+        box-shadow: 0px 0px 8px #555;
+    }
+
